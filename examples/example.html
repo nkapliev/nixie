@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="nixie.css">
+    <script type="text/javascript" src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="nixie.js"></script>
+    <style type="text/css">
+        .nixie
+        {
+            display: inline-block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nixie0').nixie();
+
+            setTimeout(function () {
+                $('#nixie1')
+                        .replaceWith($.fn.nixie({ value: '7' }));
+            }, 2000);
+
+            setTimeout(function () {
+                $('#nixie2')
+                        .replaceWith($.fn.nixie({ value: '4' }));
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div id="nixie0"></div>
+    <div id="nixie1">Soon here will be placed new Nixie!</div>
+    <div id="nixie2">Soon here will be placed new Nixie!</div>
+    <img src="http://cestmir.freeside.sk/projects/dhtml-nixie-display/nixie/zm1080_d1_09bdm_62x100_8b.png"/>
+    <img src="http://cestmir.freeside.sk/projects/dhtml-nixie-display/nixie/zm1082_l1_09bdm_62x150_8b.png"/>
+</body>
+</html>
