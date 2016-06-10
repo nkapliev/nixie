@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../nixie.js"></script>
+    <link rel="stylesheet" href="../nixie.css">
+    <style type="text/css">
+        body
+        {
+            background: #000;
+            font-size: 30px;
+            line-height: 30px;
+        }
+
+        #nixie-from-html,
+        #nixie-from-js,
+        #nixie-true-p,
+        #nixie-web-p,
+        #nixie-web
+        {
+            display: inline-block;
+        }
+
+        #nixie-web
+        {
+            font-size: 80px;
+            line-height: 80px;
+
+            letter-spacing: 0.2em;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#nixie-true-p').nixie();
+            $('#nixie-web-p').nixie();
+            $('#nixie-web').nixie();
+            $('#nixie-from-html').nixie();
+            $('#nixie-from-js').nixie({ value: 'This Nixie Tube was init from text in js' });
+
+            /*$('#nixie-power-trouble').nixie();*/
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <div id="nixie-true-p">True Nixie:</div>
+        <img src="real_nixie_1.png"/>
+    </div>
+    <div>
+        <div id="nixie-web-p">Web Nixie:</div>
+        <div id="nixie-web">0123456789 &ndash;</div>
+    </div>
+    <div id="nixie-from-html">This Nixie Tube was inited from text in html node</div>
+    <div id="nixie-from-js"></div>
+    <!--<div id="nixie-power-trouble">This Nixie Tube has some trouble with power</div>-->
+</body>
+</html>

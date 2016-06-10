@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:300);
+
+.nixie__wrapper
+{
+    padding: 7px;
+    position: relative;
+
+    background: #000;
+    overflow: hidden;
+}
+
+.nixie__value
+{
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    text-shadow:
+        0 0 5px #FCFA36,
+        0 0 7px #FC9836,
+        0 0 20px #FF3C3C,
+        0 0 25px #FF3C3C;
+    color: #FEDB01;
+}
+
+.nixie__mesh
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAYAAAD68A/GAAAAMklEQVQIW2NkQAJmDAxnYNxTDAwmyHKMMA5IEbIkOh+sEF0Qm2ZGXIqQFYPYxJtIrBsBdYoVCa7CTHkAAAAASUVORK5CYII=) repeat;
+}
