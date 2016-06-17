@@ -14,13 +14,16 @@
 
         #nixie-from-html,
         #nixie-from-js,
+        #nixie-timer-p,
         #nixie-true-p,
         #nixie-web-p,
+        #nixie-timer,
         #nixie-web
         {
             display: inline-block;
         }
 
+        #nixie-timer,
         #nixie-web
         {
             font-size: 80px;
@@ -30,12 +33,35 @@
         }
     </style>
     <script type="text/javascript">
+        /**
+         * @returns String "hh:mm:ss"
+         */
+        function getFormattedTime() {
+            var date = new Date(),
+                h = date.getHours(),
+                m = date.getMinutes(),
+                s = date.getSeconds();
+
+            return [
+                h < 10 ? '0' + h : h,
+                m < 10 ? '0' + m : m,
+                s < 10 ? '0' + s : s
+            ].join(':');
+        }
+
         $(document).ready(function () {
             $('#nixie-true-p').nixie();
             $('#nixie-web-p').nixie();
             $('#nixie-web').nixie();
             $('#nixie-from-html').nixie();
             $('#nixie-from-js').nixie({ value: 'This Nixie Tube was initialized with text from js' });
+
+            $('#nixie-timer-p').nixie();
+            $('#nixie-timer').nixie({ value: getFormattedTime() });
+
+            setInterval(function() {
+                $('#nixie-timer').nixie({ value: getFormattedTime() });
+            }, 1000);
 
             /*$('#nixie-power-trouble').nixie();*/
         });
@@ -52,6 +78,10 @@
     </div>
     <div id="nixie-from-html">This Nixie Tube was initialized with text from html node</div>
     <div id="nixie-from-js"></div>
+    <div>
+        <div id="nixie-timer-p">Nixie clock:</div>
+        <div id="nixie-timer"></div>
+    </div>
     <!--<div id="nixie-power-trouble">This Nixie Tube has some trouble with power</div>-->
 </body>
 </html>
